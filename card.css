@@ -1,0 +1,198 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto Slab', serif;
+}
+
+:root {
+    --clr-primary: #f59e0b;
+    --clr-secondary: #d97706;
+    --clr-accent: #fbbf24;
+    --clr-bg: #f9f9f9;
+    --clr-fonts: #555555;
+    --clr-dark: #78350f;
+    --clr-white: #ffffff;
+    --clr-info-dark: #64748b;
+    --radius: 12px;
+    --font-stack: 'Roboto Slab', serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.profile-card {
+    height: 600px;
+    width: 500px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    background: #ffffff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+}
+
+/* Gradient border on hover */
+.profile-card:hover {
+    border: 2px solid transparent;
+    background: linear-gradient(#ffffff, #ffffff) padding-box,
+                linear-gradient(135deg, #fbbf24, #f59e0b, #d97706) border-box;
+    box-shadow: 0 15px 40px rgba(251, 191, 36, 0.5);
+    transform: translateY(-5px);
+}
+
+.profile-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 45%;
+    width: 100%;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    border-top-left-radius: 23px;
+    border-top-right-radius: 23px;
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+.profile-card:hover::before {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: auto;
+    padding: 0px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.image .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    transition: all 0.3s ease;
+}
+
+.image .profile-img:hover {
+    transform: scale(1.05);
+    border: 4px solid #fbbf24;
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.7);
+}
+
+.profile-card .text-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-card .text-data .name {
+    font-size: 28px;
+    font-weight: 600;
+    color: #f0eaea;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.profile-card .text-data .name:hover {
+    color: #fff8dc;
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+/* Custom underline animation */
+.profile-card .text-data .name::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #fbbf24, #fff8dc, #fbbf24);
+    box-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+    transition: width 0.3s ease;
+}
+
+.profile-card .text-data .name:hover::after {
+    width: 100%;
+}
+
+.profile-card .text-data .email {
+    font-size: 15px;
+    font-weight: 400;
+    color: #e7dcdc;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.profile-card .text-data .email:hover {
+    color: #fff8dc;
+    text-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
+}
+
+.profile-card .text-data .info {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--clr-info-dark);
+    margin-top: 20px;
+    padding: 0 30px;
+    line-height: 1.6;
+}
+
+.profile-card .info {
+    font-size: 17px;
+    color: var(--clr-fonts);
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+/* Custom gradient underline on hover */
+.profile-card .info::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -8px;
+    left: 0;
+    background: linear-gradient(90deg, #f59e0b, #fbbf24, #f59e0b);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+    transition: width 0.4s ease;
+}
+
+.profile-card .info:hover::after {
+    width: 100%;
+}
+
+.profile-card .info:hover {
+    color: #d97706;
+}
+
+.above {
+    margin-bottom: 15px;
+}
+
+a {
+    color: inherit;
+
+}
